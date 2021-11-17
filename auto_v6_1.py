@@ -69,8 +69,8 @@ print("autotrade start")
 transaction=0
 avg_price=0
 k=0.3
-sp=0.98
-hp=1.05
+sp=0.85
+hp=1.1
 target_coin=['KRW-BTC']
 t_coin=['BTC']
 target_price=[]
@@ -87,7 +87,7 @@ while True:
                 current_price = get_current_price('KRW-BTC')
                 if target_price < current_price:
                     krw = get_balance("KRW")
-                    if krw > 3500000:
+                    if krw > 6000000:
                         upbit.buy_market_order('KRW-BTC', (krw-1000000)*0.9995)
                         transaction = 1    
                         avg_price = get_average('BTC') 
