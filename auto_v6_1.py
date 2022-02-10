@@ -68,9 +68,9 @@ print("autotrade start")
 
 transaction=0
 avg_price=0
-k=0.3
+k=0.2
 sp=0.85
-hp=1.1
+hp=1.05
 target_coin=['KRW-BTC']
 t_coin=['BTC']
 target_price=[]
@@ -81,7 +81,7 @@ while True:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BTC")
         end_time = start_time + datetime.timedelta(days=1)
-        if start_time < now < end_time - datetime.timedelta(seconds=60):
+        if start_time + datetime.timedelta(minutes=10): < now < end_time - datetime.timedelta(minutes=30):
             if transaction == 0:
                 target_price = get_target_price('KRW-BTC', k)
                 current_price = get_current_price('KRW-BTC')
